@@ -3,12 +3,22 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
 
 ## Preparation
 
-1. Install "kallisto" and "bustools" in your Unix/Linux environment:
+1. Install "kallisto" and "bustools" in your Unix/Linux environment :
    
-   The easiest way is through "conda".
+   The easiest way is through "conda", if you are new to conda, follow this nice [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart)
    
-   `conda install -c bioconda bustools`
-   
-   `conda install -c bioconda kallisto`
+   ```
+   conda install -c bioconda bustools
+   conda install -c bioconda kallisto
+   ```
 
-2. Install package "BUSpaRse" and "BSgenome" in your R environment:  
+2. Install package "BUSpaRse" and "BSgenome" in your R environment :
+   
+   The two packages are hosted in "Bioconductor", start your R session and type:
+   
+   ```
+   if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+   BiocManager::install("BSgenome")
+   ```
