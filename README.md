@@ -21,10 +21,21 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    BiocManager::install("BUSpaRse")
    BiocManager::install("BSgenome")
    
-   #Load the packages
+   # Load the packages
    library(BUSpaRse)
    libaray(Bsgenome)
    ```
 3. Prepare your genome file (.fasta) and annotation file (.gtf) :
 
-   We will need to convert your fasta into a BSgenome object
+   We will need to convert your fasta into a BSgenome object. In case the genome you want to use is already available as a BSgenome object, simply install it from Bioconductor and load it:
+   ```
+   # Install Arabidopsis TAIR9 genome
+   BiocManager::install("BSgenome.Athaliana.TAIR.TAIR9")
+   
+   # Install Rice MSU7 genome
+   BiocManager::install("BSgenome.Osativa.MSU.MSU7")
+   
+   # Load the genome as BSgenome object
+   library(BSgenome.Athaliana.TAIR.TAIR9)
+   libaray(BSgenome.Osativa.MSU.MSU7)
+   ```
