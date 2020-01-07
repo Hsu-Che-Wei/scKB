@@ -4,8 +4,10 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
 ## Preparation
 
 1. Install "kallisto" and "bustools" in your Unix/Linux environment:
-
-   `#The easiest way is through conda:`
+   
+   The easiest way is through "conda".
+   
+   `conda install -c bioconda bustools`
    
    `conda install -c bioconda kallisto`
 
