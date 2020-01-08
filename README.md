@@ -17,14 +17,17 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    ```
    if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
+   if (!require(devtools)) install.packages("devtools")
    
-   BiocManager::install("BUSpaRse")
+   devtools::install_github("BUStools/BUSpaRse")
    BiocManager::install("BSgenome")
    
    # Load the packages
    library(BUSpaRse)
-   libaray(Bsgenome)
+   library(Bsgenome)
    ```
+   For macOS user, if you encounter any installation error, then pay ths [site](https://github.com/BUStools/BUSpaRse) a visit.
+   
 3. Prepare your genome file (.fasta) and annotation file (.gtf) :
 
    You will need to convert your fasta into a BSgenome object. In case the genome you want to use is already available as a BSgenome object, simply install it from Bioconductor and load it:
@@ -37,5 +40,30 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    
    # Load the genome as BSgenome object
    library(BSgenome.Athaliana.TAIR.TAIR9)
-   libaray(BSgenome.Osativa.MSU.MSU7)
+   library(BSgenome.Osativa.MSU.MSU7)
+   
+   #Check the genome
+   > BSgenome.Athaliana.TAIR.TAIR9
+   Arabidopsis genome:
+   # organism: Arabidopsis thaliana (Arabidopsis)
+   # provider: TAIR
+   # provider version: TAIR9
+   # release date: June 9, 2009
+   # release name: TAIR9 Genome Release
+   # 7 sequences:
+   #   Chr1 Chr2 Chr3 Chr4 Chr5 ChrM ChrC                                                                 
+   # (use 'seqnames()' to see all the sequence names, use the '$' or '[[' operator to access a given
+   # sequence)
+   
+   > BSgenome.Osativa.MSU.MSU7
+   Rice genome:
+   # organism: Oryza sativa (Rice)
+   # provider: MSU
+   # provider version: MSU7
+   # release date: October 31, 2011
+   # release name: MSU7 Genome Release
+   # 16 sequences:
+   #   Chr1  Chr2  Chr3  Chr4  Chr5  Chr6  Chr7  Chr8  Chr9  Chr10 Chr11 Chr12 ChrM  ChrC  ChrUn ChrSy      
+   # (use 'seqnames()' to see all the sequence names, use the '$' or '[[' operator to access a given
+   # sequence)
    ```
