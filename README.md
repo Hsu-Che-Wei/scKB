@@ -12,7 +12,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    ```
 2. Install package "BUSpaRse" and "BSgenome" in your R environment :
    
-   The two packages are hosted in "Bioconductor", start your R session and simply type:
+   The two packages are hosted in "Bioconductor", start your R session and simply type :
    
    ```
    if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -26,7 +26,10 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    
 3. Prepare your genome file (.fasta) and annotation file (.gtf) :
 
-   You will need to convert your fasta into a BSgenome object. In case the genome you want to use is already available as a BSgenome object, simply install it from Bioconductor and load it:
+   You will need to convert your fasta into a BSgenome object. In case the genome you want to use is already available as a BSgenome object, simply install it from Bioconductor and load it :
+   
+   In R :
+   
    ```
    # Install Arabidopsis TAIR9 genome
    BiocManager::install("BSgenome.Athaliana.TAIR.TAIR9")
@@ -80,10 +83,10 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    library(BSgenome.Athaliana.TAIR.TAIR9)
    
    # X = directory to your annotation file, L set to 91 if you are using 10X v3 chemistry, 98 if you are using 10X v2 chemistry
-   get_velocity_files(X = "/dir/to/gtf/file/Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "/dir/to/output/for/intron/file", isoform_action = "separate")
+   get_velocity_files(X = "/dir/to/gtf/file/Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "/dir/to/output/intron/file", isoform_action = "separate")
    
    # Index the intron file with kallisto
-   system("kallisto index -i ./cDNA_introns_v3.idx /dir/to/output/for/intron/file/cDNA_introns.fa")
+   system("kallisto index -i /dir/to/output/index/file/cDNA_introns_10Xv3.idx /dir/to/output/intron/file/cDNA_introns.fa")
    ```
 
 ## kallisto
