@@ -69,7 +69,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
 
    If the genome is not available as BSgenome object or you have added new sequences manually to the genome in fasta format, then you will need to convert the fasta file into BSgenome object following this tutorial or [this manual](https://bioconductor.org/packages/release/bioc/vignettes/BSgenome/inst/doc/BSgenomeForge.pdf).
    
-   4. Extract the intron information and make kallisto index
+4. Extract the intron information and make kallisto index
    
    Here a example of Arabidopsis single cell data sequenced using "10X v3 chemistry" is provided.
    
