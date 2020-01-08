@@ -78,7 +78,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    
    In R :
    ```
-   # Load the packages and genomes
+   # Load the package and genome
    library(BUSpaRse)
    library(BSgenome.Athaliana.TAIR.TAIR9)
    
@@ -86,7 +86,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    get_velocity_files(X = "/dir/to/gtf/file/Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "/dir/to/output/intron/file", isoform_action = "separate")
    
    # Index the intron file with kallisto
-   system("kallisto index -i /dir/to/output/index/file/cDNA_introns_10Xv3.idx /dir/to/output/intron/file/cDNA_introns.fa")
+   system("kallisto index -i /dir/to/output/index/file/cDNA_introns_10xv3.idx /dir/to/output/intron/file/cDNA_introns.fa")
    ```
 
 ## kallisto
