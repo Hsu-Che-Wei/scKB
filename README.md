@@ -91,7 +91,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
 
 ## kallisto-bustools
 
-
+ In Unix/Linux environment, make sure that both "kallisto" and "bustools" can be found and executed.
 
 
 
