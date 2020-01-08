@@ -26,7 +26,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    library(BUSpaRse)
    library(Bsgenome)
    ```
-   For macOS user, if you encounter any installation error, then pay ths [site](https://github.com/BUStools/BUSpaRse) a visit.
+   For macOS user, if you encounter any installation error for BUSpaRse, then pay ths [site](https://github.com/BUStools/BUSpaRse) a visit.
    
 3. Prepare your genome file (.fasta) and annotation file (.gtf) :
 
@@ -67,3 +67,15 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    # (use 'seqnames()' to see all the sequence names, use the '$' or '[[' operator to access a given
    # sequence)
    ```
+   ##Make sure that the name of Chromosomes/Sequence is exactly the same in annotation file (.gtf) and the BSgenome object!## 
+
+
+
+
+
+
+
+
+
+
+
