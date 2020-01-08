@@ -71,7 +71,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    
 4. Extract the intron information and make kallisto index
    
-   Here a example of Arabidopsis single cell data sequenced using "10X v3 chemistry" is provided.
+   Here a example of Arabidopsis single cell data prepared using "10X v3 chemistry" is provided.
    
    In R :
    ```
