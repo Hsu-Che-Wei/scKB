@@ -69,8 +69,9 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    # (use 'seqnames()' to see all the sequence names, use the '$' or '[[' operator to access a given
    # sequence)
    ```
-   **Make sure that the name of Chromosomes/Sequence is exactly the same in annotation file (.gtf) and the BSgenome object!** 
+   **Make sure that the name of chromosomes/sequence is exactly the same in annotation file (.gtf) and the BSgenome object!** 
 
+   If the genome is not available as BSgenome object or you have added new sequences manually to the genome, then you will need to convert the fasta file into BSgenome object following this tutorial or [this manual](https://bioconductor.org/packages/release/bioc/vignettes/BSgenome/inst/doc/BSgenomeForge.pdf).
 
 
 
