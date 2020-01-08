@@ -38,11 +38,11 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    # Install Rice MSU7 genome
    BiocManager::install("BSgenome.Osativa.MSU.MSU7")
    
-   # Load the genome as BSgenome object
+   # Load the genomes as BSgenome object
    library(BSgenome.Athaliana.TAIR.TAIR9)
    library(BSgenome.Osativa.MSU.MSU7)
    
-   #Check the genome
+   #Check the genomes
    > BSgenome.Athaliana.TAIR.TAIR9
    Arabidopsis genome:
    # organism: Arabidopsis thaliana (Arabidopsis)
