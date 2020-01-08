@@ -21,10 +21,6 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    
    devtools::install_github("BUStools/BUSpaRse")
    BiocManager::install("BSgenome")
-   
-   # Load the packages
-   library(BUSpaRse)
-   library(Bsgenome)
    ```
    For macOS user, if you encounter any installation error for BUSpaRse, then pay ths [site](https://github.com/BUStools/BUSpaRse) a visit.
    
@@ -72,6 +68,23 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    **Make sure that the name of chromosomes/sequence is exactly the same in annotation file (.gtf) and the BSgenome object!** 
 
    If the genome is not available as BSgenome object or you have added new sequences manually to the genome in fasta format, then you will need to convert the fasta file into BSgenome object following this tutorial or [this manual](https://bioconductor.org/packages/release/bioc/vignettes/BSgenome/inst/doc/BSgenomeForge.pdf).
+   
+   4. Extract the intron information and make kallisto index
+   
+   Here a example of Arabidopsis single cell data sequenced using "10X v3 chemistry" is provided.
+   
+   In R :
+   ```
+   # Load the packages and genomes
+   library(BUSpaRse)
+   library(BSgenome.Athaliana.TAIR.TAIR9)
+   
+   # X = directory to your annotation file, L set to 91 if you are using 10X v3 chemistry, 98 if you are using 10X v2 chemistry
+   get_velocity_files(X = "/dir/to/gtf/file/Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "/dir/to/output/for/intron/file", isoform_action = "separate")
+   
+   # Index the intron file with kallisto
+   system("kallisto index -i ./cDNA_introns_v3.idx /dir/to/output/for/intron/file/cDNA_introns.fa")
+   ```
 
 ## kallisto
 
