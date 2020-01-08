@@ -42,9 +42,10 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    library(BSgenome.Athaliana.TAIR.TAIR9)
    library(BSgenome.Osativa.MSU.MSU7)
    
-   #Check the genomes
-   > BSgenome.Athaliana.TAIR.TAIR9
-   Arabidopsis genome:
+   # Check the genomes
+   BSgenome.Athaliana.TAIR.TAIR9
+   
+   # Arabidopsis genome:
    # organism: Arabidopsis thaliana (Arabidopsis)
    # provider: TAIR
    # provider version: TAIR9
@@ -55,8 +56,9 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    # (use 'seqnames()' to see all the sequence names, use the '$' or '[[' operator to access a given
    # sequence)
    
-   > BSgenome.Osativa.MSU.MSU7
-   Rice genome:
+   BSgenome.Osativa.MSU.MSU7
+   
+   # Rice genome:
    # organism: Oryza sativa (Rice)
    # provider: MSU
    # provider version: MSU7
