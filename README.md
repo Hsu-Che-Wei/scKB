@@ -89,7 +89,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    system("kallisto index -i /dir/to/output/index/file/cDNA_introns_10xv3.idx /dir/to/output/intron/file/cDNA_introns.fa")
    ```
 
-## kallisto
+## kallisto-bustools
 
 
 
