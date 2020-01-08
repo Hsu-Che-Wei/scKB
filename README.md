@@ -67,7 +67,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    # (use 'seqnames()' to see all the sequence names, use the '$' or '[[' operator to access a given
    # sequence)
    ```
-   ## Make sure that the name of Chromosomes/Sequence is exactly the same in annotation file (.gtf) and the BSgenome object! ## 
+   ** Make sure that the name of Chromosomes/Sequence is exactly the same in annotation file (.gtf) and the BSgenome object! ** 
 
 
 
