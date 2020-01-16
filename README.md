@@ -1,4 +1,4 @@
-# kallisto-bustools
+# scKB
 Use kallisto and bustools to call the gene-cell matrix for both spliced and unspliced transcripts of scRNA-seq
 
 ## Preparation
@@ -89,10 +89,34 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    system("kallisto index -i /dir/to/output/index/file/cDNA_introns_10xv3.idx /dir/to/output/intron/file/cDNA_introns.fa")
    ```
 
-## kallisto-bustools
+## scKB
 
  In Unix/Linux environment, make sure that both "kallisto" and "bustools" can be found and executed.
+ ```
+scKB [-h] | [-f fastq_dir -i intron_index_dir -d intermediate_files_ouput_dir -s single_cell_technique_supported -t number_of_threads_used -w whitelist_dir -n results_output_dir]
 
+-h (--help) = software usage
+-f (--file) = directory to fastq files
+-i (--index) = directory to intron index files (includes the .idx file itself)
+-d (--dir_intermediate) = directory to intermediate files output
+-s (--supported_tech) = single cell technique supported
+
+short name       description
+----------       -----------
+10xv1            10x version 1 chemistry
+10xv2            10x version 2 chemistry
+10xv3            10x version 3 chemistry
+CELSeq           CEL-Seq
+CELSeq2          CEL-Seq version 2
+DropSeq          DropSeq
+inDrops          inDrops
+SCRBSeq          SCRB-Seq
+SureCell         SureCell for ddSEQ
+
+-t (--thread) = number of threads used
+-w (--whitelist) = directory to whitelist file (includes the text file itself)
+-n (--dir_final) = directory to final output that includes gene cell matrix
+ ```
 
 
 
