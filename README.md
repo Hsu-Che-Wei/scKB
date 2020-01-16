@@ -92,6 +92,9 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
 ## scKB
 
  In Unix/Linux environment, make sure that both "kallisto" and "bustools" can be found and executed.
+ 
+ Usage :
+ 
  ```
 scKB [-h] | [-f fastq_dir -i intron_index_dir -d intermediate_files_ouput_dir -s single_cell_technique_supported -t number_of_threads_used -w whitelist_dir -n results_output_dir]
 
@@ -117,7 +120,15 @@ SureCell         SureCell for ddSEQ
 -w (--whitelist) = directory to whitelist file (includes the text file itself)
 -n (--dir_final) = directory to final output that includes gene cell matrix
  ```
+Example :
 
+```
+scKB -f /dir/to/fastq/files -i /dir/to/output/index/file/cDNA_introns_10xv3.idx -d /dir/to/output/intermediate/files -s 10xv3 -t 8 -w dir/to/whitelist/file/10xv3_whitelist.txt -n /dir/to/output/gene/cell/matrix
+```
+
+**Under the directory that you submit to "-f", make sure that you have at least one run (I1, R1 and R2 gzipped fastq). Each run of scKB will call the gene-cell matrix for one sample.**
+
+**Here we only provide example for 10X version 3 chemistry, and only provide the whitelist files for 10X version 2 and version 3.**
 
 
 
