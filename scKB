@@ -1,0 +1,83 @@
+#!/bin/bash
+
+usage="$(basename "$0") [-h] | [-f fastq_dir -i intron_index_dir -d intermediate_files_ouput_dir -s single_cell_technique_supported -t number_of_threads_used -w whitelist_dir -n results_output_dir]
+
+-h (--help) = software usage
+-f (--file) = directory to fastq files
+-i (--index) = directory to intron index files (includes the .idx file itself)
+-d (--dir_intermediate) = directory to intermediate files output
+-s (--supported_tech) = single cell technique supported
+
+short name       description
+----------       -----------
+10xv1            10x version 1 chemistry
+10xv2            10x version 2 chemistry
+10xv3            10x version 3 chemistry
+CELSeq           CEL-Seq
+CELSeq2          CEL-Seq version 2
+DropSeq          DropSeq
+inDrops          inDrops
+SCRBSeq          SCRB-Seq
+SureCell         SureCell for ddSEQ
+
+-t (--thread) = number of threads used
+-w (--whitelist) = directory to whitelist file (includes the text file itself)
+-n (--dir_final) = directory to final output that includes gene cell matrix
+"
+while [ -n "$1" ]; do # while loop starts
+
+    case "$1" in
+
+    -h | --help ) echo "$usage" 
+        exit ;;
+
+    -f | --file )
+        fastqdir=$2 
+        shift ;;
+    -i | --index )
+        indexdir=$2
+        shift ;;
+
+    -d | --dir_intermediate ) interdir=$2 
+        shift ;;
+
+    -s | --supported_tech ) supportedtech=$2 
+        shift;;
+
+    -t | --thread ) numthread=$2
+        shift ;;
+
+    -w | --whitelist ) whitelistdir=$2 
+        shift;;
+
+    -n | --dir_final ) namedir=$2
+        shift;;
+
+    --)
+        shift # The double dash makes them parameters
+
+        break
+        ;;
+
+    *) echo "Option $1 not recognized" ;;
+
+    esac
+
+    shift
+
+done
+
+find $fastqdir -type f | grep '_R._' | sort | xargs kallisto bus -i $indexdir -o $interdir -x $supportedtech -t $numthread 
+
+bustools correct -w $whitelistdir -p $interdir/output.bus | bustools sort -o $interdir/output.correct.sort.bus -t $numthread -
+bustools capture -s -x -o $interdir/spliced.bus -c $interdir/introns_tx_to_capture.txt -e $interdir/matrix.ec -t $interdir/transcripts.txt $interdir/output.correct.sort.bus
+bustools capture -s -o $interdir/unspliced.bus -c $interdir/introns_tx_to_capture.txt -e $interdir/matrix.ec -t $interdir/transcripts.txt $interdir/output.correct.sort.bus
+
+bustools count -o $interdir/unspliced -g $interdir/tr2g.tsv -e $interdir/matrix.ec -t $interdir/transcripts.txt --genecounts $interdir/unspliced.bus
+bustools count -o $interdir/spliced -g $interdir/tr2g.tsv -e $interdir/matrix.ec -t $interdir/transcripts.txt --genecounts $interdir/spliced.bus
+
+mkdir $namedir
+sed -i 's/.$//g' $interdir/spliced.genes.txt
+sed -i 's/.$//g' $interdir/unspliced.genes.txt
+mv $interdir/spliced.barcodes.txt $interdir/spliced.genes.txt $interdir/spliced.mtx $interdir/unspliced.barcodes.txt $interdir/unspliced.genes.txt $interdir/unspliced.mtx ./$namedir/
+
