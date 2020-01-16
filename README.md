@@ -126,7 +126,7 @@ Example :
 scKB -f /dir/to/fastq/files -i /dir/to/output/index/file/cDNA_introns_10xv3.idx -d /dir/to/output/intermediate/files -s 10xv3 -t 8 -w dir/to/whitelist/file/10xv3_whitelist.txt -n /dir/to/output/gene/cell/matrix
 ```
 
-**Under the directory that you submit to -f, make sure that you have sequences of at least one run (I1, R1 and R2 gzipped fastq). Each run of scKB will call the gene-cell matrix for one sample.**
+**Under the directory that you submit to -f, make sure that you have sequences of at least one run (I1, R1 and R2 gzipped fastq). Multiple runs of the same sample should be put under the same directory. Each run of scKB will call the gene-cell matrix for one sample.**
 
 **Here we only provide example for 10X version 3 chemistry, and only provide the whitelist files for 10X version 2 and version 3.**
 
