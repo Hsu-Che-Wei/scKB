@@ -79,5 +79,5 @@ bustools count -o $interdir/spliced -g $interdir/tr2g.tsv -e $interdir/matrix.ec
 mkdir $namedir
 sed -i 's/.$//g' $interdir/spliced.genes.txt
 sed -i 's/.$//g' $interdir/unspliced.genes.txt
-mv $interdir/spliced.barcodes.txt $interdir/spliced.genes.txt $interdir/spliced.mtx $interdir/unspliced.barcodes.txt $interdir/unspliced.genes.txt $interdir/unspliced.mtx ./$namedir/
+mv $interdir/spliced.barcodes.txt $interdir/spliced.genes.txt $interdir/spliced.mtx $interdir/unspliced.barcodes.txt $interdir/unspliced.genes.txt $interdir/unspliced.mtx $namedir
 
