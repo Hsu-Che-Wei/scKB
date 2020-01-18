@@ -14,7 +14,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    ```
    It is recommended that you create a new conda environment for only the use of scKB :
    ```
-   # create the environment named scKB
+   # create the environment named scKB, which will have kallisto, bustools and R (version 3.6.1) installed
    conda env create -f scKB.yml
    
    # activate the environment
