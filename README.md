@@ -3,7 +3,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
 
 ## Preparation
 
-**Make sure that you have downloaded the scKB bash script, whitelists and scKB.yml files before going through the guideline.**
+**Make sure that you have downloaded the scKB bash script, whitelists and scKB.yml files before going through the guides.**
 
 1. Install "kallisto" and "bustools" in your Unix/Linux environment :
    
