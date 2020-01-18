@@ -1,0 +1,7 @@
+name: scKB
+channels:
+ - bioconda
+dependencies:
+ - bustools
+ - kallisto
+ - r-base=3.6.1
