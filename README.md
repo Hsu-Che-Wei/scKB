@@ -139,6 +139,8 @@ Example (in Linux/Unix under the directory where scKB script is located):
 ./scKB -f /dir/to/fastq/files -i /dir/to/output/index/file/cDNA_introns_10xv3.idx -d /dir/to/output/intermediate/files -s 10xv3 -t 8 -w dir/to/whitelist/file/10xv3_whitelist.txt -n /dir/to/output/gene/cell/matrix
 ```
 
+**Caution!**
+
 **Under the directory that you submit to -f, make sure that you have sequences of at least one run (I1, R1 and R2 gzipped fastq). Multiple runs of the same sample should be put under the same directory. Each run of scKB will call the gene-cell matrix for one sample.**
 
 **The directory to intron file (see Preparation step 4), index file (-i), whitelist (-w) and intermediate files (-d) can be the same one, yet the final output directory (-n) should be different.**
