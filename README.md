@@ -3,7 +3,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
 
 ## Preparation
 
-**Make sure that you have downloaded the scKB bash script, whitelists and scKB.yml files before going through the guides.**
+**Make sure that you have downloaded the scKB script, whitelists (unzipped it once downloaded) and scKB.yml files.**
 
 1. Install "kallisto" and "bustools" in your Unix/Linux environment :
    
@@ -134,7 +134,7 @@ SureCell         SureCell for ddSEQ
 -w (--whitelist) = directory to whitelist file (includes the text file itself)
 -n (--dir_final) = directory to final output that includes gene cell matrix
  ```
-Example (in Linux/Unix under the directory where scKB bash script is located):
+Example (in Linux/Unix under the directory where scKB script is located):
 
 ```
 ./scKB -f /dir/to/fastq/files -i /dir/to/output/index/file/cDNA_introns_10xv3.idx -d /dir/to/output/intermediate/files -s 10xv3 -t 8 -w dir/to/whitelist/file/10xv3_whitelist.txt -n /dir/to/output/gene/cell/matrix
