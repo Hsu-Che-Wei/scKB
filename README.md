@@ -10,9 +10,20 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    conda install -c bioconda bustools
    conda install -c bioconda kallisto
    ```
+   It is recommended that you create a new conda environment for only the use of scKB :
+   ```
+   # create the environment named scKB
+   conda env create -f scKB.yml
+   
+   # activate the environment
+   conda activate scKB
+   
+   # start the R session
+   R
+   ```
 2. Install package "BUSpaRse" and "BSgenome" in your R environment (tested R version = 3.6.1) :
    
-   The two packages are hosted in "Bioconductor", start your R session and simply type :
+   The two packages are hosted in "Bioconductor", make sure your are in R and type :
    
    ```
    if (!requireNamespace("BiocManager", quietly = TRUE))
