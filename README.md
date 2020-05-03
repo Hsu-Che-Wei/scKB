@@ -83,7 +83,7 @@ Use kallisto and bustools to call the gene-cell matrix for both spliced and unsp
    ```
    **Make sure that the name of chromosomes/sequence is exactly the same in annotation file (.gtf) and the BSgenome object!** 
 
-   If the genome is not available as BSgenome object or you have added new sequences manually to the genome in fasta format, then you will need to convert the fasta file into BSgenome object following [this manual](https://bioconductor.org/packages/release/bioc/vignettes/BSgenome/inst/doc/BSgenomeForge.pdf).
+   If the genome is not available as BSgenome object or you have added new sequences manually to the genome in fasta format, then you will need to convert the fasta file into BSgenome object following [this manual](https://bioconductor.org/packages/release/bioc/vignettes/BSgenome/inst/doc/BSgenomeForge.pdf) (check out section 2.2.5 and 2.3).
    
 4. Extract the intron information and make kallisto index
    
