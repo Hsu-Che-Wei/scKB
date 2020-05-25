@@ -146,11 +146,3 @@ Example (in Linux/Unix under the directory where scKB script is located):
 **2. The directory to intron file (see Preparation step 4), index file (-i), whitelist (-w) and intermediate files (-d) can be the same one, yet the final output directory (-n) should be different.**
 
 **3. Only example for 10X version 3 chemistry is provided here, and only the whitelist files for 10X version 2 and version 3 are provided, yet, the techniques listed in usage are also supported.**
-
-Author: Che-Wei Hsu (ORCID: 0000-0003-3709-9748)
-
-Maintainer: Che-Wei Hsu <raphael830102@gmail.com>
-
-
-
-
