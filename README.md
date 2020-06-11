@@ -159,11 +159,10 @@ In Linux:
 ```
 cd ~/to/where/you/clone/the/repo/scKB
 
-# make a directory with your sample name 
-mkdir ./col0_toy
+# run scKB, it is recommended to named the output file as sample name using "-n" flag if one expect to use COPILOT for downstrean preprocessing 
+./scKB -f ./toy_data -i ./cDNA_introns_10xv3.idx -d ./ -s 10xv3 -t 8 -w ./10xv3_whitelist.txt -n ./col_toy
 
-# run scKB
-./scKB -f ./toy_data -i ./cDNA_introns_10xv3.idx -d ./ -s 10xv3 -t 8 -w ./10xv3_whitelist.txt -n ./col0_toy
+# After running scKB, the output directory (in this case "./col_toy") should have 8 files: "inspect.json", "run_info.json", "spliced.barcodes.txt", "spliced.genes.txt", "spliced.mtx", "unspliced.barcodes.txt", "unspliced.genes.txt" and "unspliced.mtx"
 ```
 
 **Caution!**
