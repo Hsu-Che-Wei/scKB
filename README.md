@@ -169,8 +169,8 @@ cd ~/to/where/you/clone/the/repo/scKB
 
 **Caution!**
 
-**1. Under the directory that you submit to -f, make sure that you have sequences of at least one run (I1 (optional), R1 and R2 gzipped fastq). Multiple runs of the same sample should be put under the same directory. Each run of scKB will call the gene-cell matrix for one sample.**
+**1. Under the directory that you submit to -f, make sure that you have sequences of at least one run (I1 (optional), R1 and R2 gzipped fastq). Multiple runs of the same sample should be put under the same directory. Each run of scKB will call the gene-by-cell matrix for one sample.**
 
 **2. The directory to intron file (see Preparation step 4), index file (-i), whitelist (-w) and intermediate files (-d) can be the same one, yet the final output directory (-n) should be different.**
 
-**3. Only example for 10X version 3 chemistry is provided here, and only the whitelist files for 10X version 2 and version 3 are provided, yet, the techniques listed in usage are also supported.**
+**3. Only demonstration of processing 10X version 3 chemistry is provided here, and only the whitelist files for 10X version 2 and version 3 are provided, yet, the techniques listed in usage are also supported.**
