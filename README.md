@@ -97,6 +97,8 @@ git clone https://github.com/Hsu-Che-Wei/scKB.git
    
    In R :
    ```
+   setwd("~/to/where/you/clone/the/repo/scKB")
+   
    # Load the package and genome
    library(BUSpaRse)
    library(BSgenome.Athaliana.TAIR.TAIR9)
