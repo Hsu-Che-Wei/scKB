@@ -20,8 +20,6 @@ chmod 777 scKB
 
 ## Preparation
 
-**Make sure that you have downloaded the scKB script, whitelist (unzip it once downloaded) and scKB.yml files.**
-
 1. Install "kallisto" and "bustools" in your Unix/Linux environment :
    
    The easiest way is through "conda". If you are new to conda, follow this nice [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart). 
@@ -52,7 +50,7 @@ chmod 777 scKB
    devtools::install_github("BUStools/BUSpaRse")
    BiocManager::install("BSgenome")
    ```
-   For macOS user, if you encounter any installation error for BUSpaRse, then pay ths [site](https://github.com/BUStools/BUSpaRse) a visit.
+   For macOS user, if you encounter any error when installing BUSpaRse, then pay ths [site](https://github.com/BUStools/BUSpaRse) a visit.
    
 3. Prepare your genome file (.fasta) and annotation file (.gtf) :
 
@@ -61,10 +59,10 @@ chmod 777 scKB
    In R :
    
    ```
-   # Install Arabidopsis TAIR9 genome
+   # Install Arabidopsis TAIR genome
    BiocManager::install("BSgenome.Athaliana.TAIR.TAIR9")
    
-   # Install Rice MSU7 genome
+   # Install Rice MSU genome
    BiocManager::install("BSgenome.Osativa.MSU.MSU7")
    
    # Load the genomes as BSgenome object
@@ -115,7 +113,7 @@ chmod 777 scKB
    library(BSgenome.Athaliana.TAIR.TAIR9)
    
    # X = directory to your annotation file, L set to 91 if you are using 10X v3 chemistry, 98 if you are using 10X v2 chemistry
-   get_velocity_files(X = "/dir/to/gtf/file/Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "./", isoform_action = "separate", chrs_only=FALSE)
+   get_velocity_files(X = "./Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "./", isoform_action = "separate", chrs_only=FALSE)
    
    # After running get_velocity_files, the working directory should have files "cDNA_introns.fa", "cDNA_tx_to_capture.txt", "introns_tx_to_capture.txt" and "tr2g.tsv" 
    
@@ -161,10 +159,11 @@ In Linux:
 ```
 cd ~/to/where/you/clone/the/repo/scKB
 
-# run scKB, it is recommended to named the output file as sample name using "-n" flag if one expect to use COPILOT for downstrean preprocessing 
+# run scKB, it is recommended to name the output directory as sample name using "-n" flag if one expect to use COPILOT with default parameters for downstream preprocessing 
 ./scKB -f ./toy_data -i ./cDNA_introns_10xv3.idx -d ./ -s 10xv3 -t 8 -w ./10xv3_whitelist.txt -n ./col_toy
 
 # After running scKB, the output directory (in this case "./col_toy") should have 8 files: "inspect.json", "run_info.json", "spliced.barcodes.txt", "spliced.genes.txt", "spliced.mtx", "unspliced.barcodes.txt", "unspliced.genes.txt" and "unspliced.mtx"
+# json files have the reads/aligning stats of the sample, mtx files are gene-by-cell matrices, txt files have cell barcodes and gene ids information
 ```
 
 **Caution!**
