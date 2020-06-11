@@ -104,10 +104,12 @@ git clone https://github.com/Hsu-Che-Wei/scKB.git
    library(BSgenome.Athaliana.TAIR.TAIR9)
    
    # X = directory to your annotation file, L set to 91 if you are using 10X v3 chemistry, 98 if you are using 10X v2 chemistry
-   get_velocity_files(X = "/dir/to/gtf/file/Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "/dir/to/output/intron/file", isoform_action = "separate", chrs_only=FALSE)
+   get_velocity_files(X = "/dir/to/gtf/file/Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "./", isoform_action = "separate", chrs_only=FALSE)
+   
+   # After running get_velocity_files, the working directory should have files "cDNA_introns.fa", "cDNA_tx_to_capture.txt", "introns_tx_to_capture.txt" and "tr2g.tsv" 
    
    # Index the intron file with kallisto
-   system("kallisto index -i /dir/to/output/index/file/cDNA_introns_10xv3.idx /dir/to/output/intron/file/cDNA_introns.fa")
+   system("kallisto index -i ./cDNA_introns_10xv3.idx ./cDNA_introns.fa")
    ```
 
 ## scKB
@@ -141,9 +143,11 @@ SureCell         SureCell for ddSEQ
 -w (--whitelist) = directory to whitelist file (includes the text file itself)
 -n (--dir_final) = directory to final output that includes gene cell matrix
  ```
-Example (in Linux/Unix under the directory where scKB script is located):
+In Linux:
 
 ```
+cd ~/to/where/you/clone/the/repo/scKB
+
 ./scKB -f /dir/to/fastq/files -i /dir/to/output/index/file/cDNA_introns_10xv3.idx -d /dir/to/output/intermediate/files -s 10xv3 -t 8 -w dir/to/whitelist/file/10xv3_whitelist.txt -n /dir/to/output/gene/cell/matrix
 ```
 
