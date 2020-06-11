@@ -1,6 +1,12 @@
 # scKB
 Use kallisto and bustools to call the gene-cell matrix for both spliced and unspliced transcripts of scRNA-seq
 
+## Download 
+
+```
+git clone https://github.com/Hsu-Che-Wei/scKB.git
+```
+
 ## Preparation
 
 **Make sure that you have downloaded the scKB script, whitelist (unzip it once downloaded) and scKB.yml files.**
