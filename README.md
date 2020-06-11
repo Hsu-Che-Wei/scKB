@@ -10,9 +10,10 @@ git clone https://github.com/Hsu-Che-Wei/scKB.git
 
 cd ./scKB
 
-# unzip whitelist files
+# unzip whitelist files and gene annotation file
 unzip 10xv2_whitelist.txt.zip
 unzip 10xv3_whitelist.txt.zip
+gunzip Arabidopsis_thaliana.TAIR10.43.gtf.gz
 
 # make scKB executable
 chmod 777 scKB
