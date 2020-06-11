@@ -5,6 +5,12 @@ Use kallisto and bustools to call the gene-by-cell matrix for both spliced and u
 
 ```
 git clone https://github.com/Hsu-Che-Wei/scKB.git
+
+cd ./scKB
+
+#unzip whitelist files
+unzip 10xv2_whitelist.txt.zip
+unzip 10xv3_whitelist.txt.zip
 ```
 
 ## Preparation
@@ -110,6 +116,8 @@ git clone https://github.com/Hsu-Che-Wei/scKB.git
    
    # Index the intron file with kallisto
    system("kallisto index -i ./cDNA_introns_10xv3.idx ./cDNA_introns.fa")
+   
+   quit()
    ```
 
 ## scKB
