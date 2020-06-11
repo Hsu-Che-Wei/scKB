@@ -8,9 +8,12 @@ git clone https://github.com/Hsu-Che-Wei/scKB.git
 
 cd ./scKB
 
-#unzip whitelist files
+# unzip whitelist files
 unzip 10xv2_whitelist.txt.zip
 unzip 10xv3_whitelist.txt.zip
+
+# make scKB executable
+chmod 777 scKB
 ```
 
 ## Preparation
