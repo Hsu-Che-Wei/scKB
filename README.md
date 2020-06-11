@@ -1,5 +1,5 @@
 # scKB
-Use kallisto and bustools to call the gene-cell matrix for both spliced and unspliced transcripts of scRNA-seq
+Use kallisto and bustools to call the gene-by-cell matrix for both spliced and unspliced transcripts of scRNA-seq
 
 ## Download 
 
@@ -148,12 +148,16 @@ In Linux:
 ```
 cd ~/to/where/you/clone/the/repo/scKB
 
-./scKB -f /dir/to/fastq/files -i /dir/to/output/index/file/cDNA_introns_10xv3.idx -d /dir/to/output/intermediate/files -s 10xv3 -t 8 -w dir/to/whitelist/file/10xv3_whitelist.txt -n /dir/to/output/gene/cell/matrix
+# make a directory with your sample name 
+mkdir ./col0_toy
+
+# run scKB
+./scKB -f ./toy_data -i ./cDNA_introns_10xv3.idx -d ./ -s 10xv3 -t 8 -w ./10xv3_whitelist.txt -n ./col0_toy
 ```
 
 **Caution!**
 
-**1. Under the directory that you submit to -f, make sure that you have sequences of at least one run (I1, R1 and R2 gzipped fastq). Multiple runs of the same sample should be put under the same directory. Each run of scKB will call the gene-cell matrix for one sample.**
+**1. Under the directory that you submit to -f, make sure that you have sequences of at least one run (I1 (optional), R1 and R2 gzipped fastq). Multiple runs of the same sample should be put under the same directory. Each run of scKB will call the gene-cell matrix for one sample.**
 
 **2. The directory to intron file (see Preparation step 4), index file (-i), whitelist (-w) and intermediate files (-d) can be the same one, yet the final output directory (-n) should be different.**
 
