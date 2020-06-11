@@ -3,6 +3,8 @@ Use kallisto and bustools to call the gene-by-cell matrix for both spliced and u
 
 ## Download 
 
+In Linux:
+
 ```
 git clone https://github.com/Hsu-Che-Wei/scKB.git
 
