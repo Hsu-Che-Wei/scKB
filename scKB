@@ -76,8 +76,9 @@ bustools capture -s -o $interdir/unspliced.bus -c $interdir/introns_tx_to_captur
 bustools count -o $interdir/unspliced -g $interdir/tr2g.tsv -e $interdir/matrix.ec -t $interdir/transcripts.txt --genecounts $interdir/unspliced.bus
 bustools count -o $interdir/spliced -g $interdir/tr2g.tsv -e $interdir/matrix.ec -t $interdir/transcripts.txt --genecounts $interdir/spliced.bus
 
+bustools inspect -o $interdir/inspect.json -e $interdir/matrix.ec -w $whitelistdir $interdir/output.bus
+
 mkdir $namedir
 sed -i 's/.$//g' $interdir/spliced.genes.txt
 sed -i 's/.$//g' $interdir/unspliced.genes.txt
 mv $interdir/run_info.json $interdir/inspect.json $interdir/spliced.barcodes.txt $interdir/spliced.genes.txt $interdir/spliced.mtx $interdir/unspliced.barcodes.txt $interdir/unspliced.genes.txt $interdir/unspliced.mtx $namedir
-
