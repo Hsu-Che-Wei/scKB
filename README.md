@@ -103,7 +103,7 @@ chmod 777 scKB
    
 4. Extract the intron information and make kallisto index
    
-   An example of Arabidopsis single cell data prepared using "10X v3 chemistry" is provided here.
+   An example showing how to extract intron information and prepare kallisto index for __Arabidopsis__ singel cell sample prepared using "10X v3 chemistry" is provided here.
    
    In R :
    ```
