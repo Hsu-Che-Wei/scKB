@@ -51,7 +51,7 @@ chmod 777 scKB
    devtools::install_github("BUStools/BUSpaRse")
    BiocManager::install("BSgenome")
    ```
-   For macOS user, if you encounter any error when installing BUSpaRse, then pay ths [site](https://github.com/BUStools/BUSpaRse) a visit.
+   For macOS user, if you encounter any error when installing BUSpaRse, then pay this [site](https://github.com/BUStools/BUSpaRse) a visit.
    
 3. Prepare your genome file (.fasta) and annotation file (.gtf) :
 
