@@ -2,6 +2,6 @@ name: scKB
 channels:
  - bioconda
 dependencies:
- - bustools=0.39.3
- - kallisto=0.46.1
- - r-base=3.6.1
+ - bustools=0.41.0
+ - kallisto=0.48.0
+ - r-base=4.1.3
