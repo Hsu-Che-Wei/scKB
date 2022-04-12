@@ -114,7 +114,7 @@ chmod 777 scKB
    library(BSgenome.Athaliana.TAIR.TAIR9)
    
    # X = directory to your annotation file, L set to 91 if you are using 10X v3 chemistry, 98 if you are using 10X v2 chemistry
-   get_velocity_files(X = "./Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "./", isoform_action = "separate", chrs_only=FALSE)
+   get_velocity_files(X = "./Arabidopsis_thaliana.TAIR10.43.gtf", L = 91, Genome = BSgenome.Athaliana.TAIR.TAIR9, out_path = "./", isoform_action = "separate", chrs_only=FALSE, style="Ensembl")
    
    # After running get_velocity_files, the working directory should have files "cDNA_introns.fa", "cDNA_tx_to_capture.txt", "introns_tx_to_capture.txt" and "tr2g.tsv" 
    
