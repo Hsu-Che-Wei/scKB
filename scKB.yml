@@ -1,6 +1,7 @@
 name: scKB
 channels:
  - conda-forge
+ - bioconda
 dependencies:
  - bustools=0.41.0
  - kallisto=0.48.0
